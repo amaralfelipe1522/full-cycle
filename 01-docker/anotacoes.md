@@ -216,3 +216,21 @@ docker run -d --network laranet --name nginx-laravel -p 8080:80 amaralfelipe1522
 ```
 docker-compose up -d --build
 ```
+- Comandos usados no exemplo da aula
+```
+docker exec -it db bash
+mysql -uroot -p
+use nodedb
+CREATE TABLE people (id INT NOT NULL auto_increment, name VARCHAR(250), PRIMARY KEY (id));
+```
+> Tabela PEOPLE do container DB será populada após rodar a aplicação index.js no container NODE-APP
+
+
+## Dependencias entre Containers
+
+### depends_on
+- Garante que um container será iniciado antes de outro, porém não garante que irá aguardar o primeiro container estar completo;
+
+### Dockerize ou Wait-for-it
+> Exemplo de Dockerize no exemplo de Docker-compose de Node com MySql.
+- Garante que um container só irá subir após outro container ser completamente iniciado.

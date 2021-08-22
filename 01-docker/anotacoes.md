@@ -210,6 +210,7 @@ docker run -d --network laranet --name laravel amaralfelipe1522/laravel
 docker run -d --network laranet --name nginx-laravel -p 8080:80 amaralfelipe1522/nginx-laravel
 ```
 
+
 ## Docker Compose
 
 - Rebuildar imagens todas as vezes que fizer uma alteração no Dockerfile:
@@ -217,6 +218,7 @@ docker run -d --network laranet --name nginx-laravel -p 8080:80 amaralfelipe1522
 docker-compose up -d --build
 ```
 - Comandos usados no exemplo da aula
+> Necessário criar um diretório chamado *mysql* dentro de */01-docker/node-mysql*
 ```
 docker exec -it db bash
 mysql -uroot -p

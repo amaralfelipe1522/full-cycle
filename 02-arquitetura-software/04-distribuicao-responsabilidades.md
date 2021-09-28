@@ -25,4 +25,4 @@ Exemplo de responsabilidades distribuídas:
 -   Times grandes;
 -   Necessidade de escalar todo o sistema pelo fato de uma área em específico esteja em pico de utilização;
 -   Risco de um deploy completo começa a se elevar;
--   Necessidade de usar tecnologias diferentes;
+-   Necessidade de usar tecnologias diferentes.

@@ -8,7 +8,7 @@
 
 ## **Server Side**
 
-![Client Side](../assets/service-discovery-server.png)
+![Server Side](../assets/service-discovery-server.png)
 
 ## **Ferramentas Populares**
 

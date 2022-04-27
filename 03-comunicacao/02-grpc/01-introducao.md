@@ -24,7 +24,6 @@
     -   Dart;
     -   Kotlin / JVM.
 
-
 ## **Protocol Buffers**
 
 -   Neutra de linguagem e Plataforma;

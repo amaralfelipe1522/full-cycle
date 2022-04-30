@@ -9,3 +9,16 @@ go mod init github.com/<seu_user>/<repo_name>
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 ```
+
+# Client Evans
+[Repositório Github](https://github.com/ktr0731/evans#from-github-releases)
+
+```
+tar -zxvf evans_linux_amd64.tar.gz
+```
+> Mova o arquivo para a PATH
+
+```
+evans -r repl --host localhost --port 50051
+```
+![Exemplo do Evans](../../assets/evans-example.png)

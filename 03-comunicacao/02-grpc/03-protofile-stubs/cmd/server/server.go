@@ -4,7 +4,10 @@ import (
 	"log"
 	"net"
 
+	"github.com/amaralfelipe1522/fc2-grpc/pb"
+	"github.com/amaralfelipe1522/fc2-grpc/services"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {
@@ -14,6 +17,11 @@ func main() {
 	}
 
 	grpcServer := grpc.NewServer()
+	// Registrando o serviço no servidor
+	pb.RegisterUserServiceServer(grpcServer, services.NewUserService())
+
+	// Modo Reflection para o client conseguir entender quais são os métodos existentes
+	reflection.Register(grpcServer)
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("Could not connect: %v", err)

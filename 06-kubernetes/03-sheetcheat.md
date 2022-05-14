@@ -30,6 +30,16 @@ Alterar o contexto para outro cluster em execução:
 kubectl config use-context <NOME DO CLUSTER>
 ```
 
+Consultar os replicasets
+```
+kubectl get replicasets
+```
+
+Consultar os deployments
+```
+kubectl get deployments
+```
+
 > A extensão Kubernetes do VSCode torna a alteração do contexto mais prática
 
 ## Resumo do primeiro exemplo

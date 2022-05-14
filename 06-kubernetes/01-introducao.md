@@ -26,3 +26,10 @@
     - Provisiona os Pods no clustes;
     - Define a quantidade de réplicas do Pod (***ReplicaSets***);
 ![Deployments](../assets/k8s-deployment.png)
+
+## Replicasets
+Objeto que gerencia os pods, criando replicas e monitorando os pods no intuito de manter todos em funcionamento.
+Caso a imagem Docker utilizada seja atualizada, os pods criados pelo replicasets só irão subir a nova versão após derrubar os pods atuais e gerar novos. Para contornar isso, usamos o Deployment.
+
+## Deployment
+Gerencia de forma automatica os ReplicaSets, para que todos estejam rodando as mesmas versões da imagem Docker. O Deployment não exclui o ReplicaSet antigo.

@@ -1,7 +1,5 @@
 # Cheatsheet - Kubectl && Kind
 
-/``````
-
 Visualizar cluster em execução no Kubectl:
 ```
 kubectl get nodes
@@ -34,3 +32,25 @@ kubectl config use-context <NOME DO CLUSTER>
 
 > A extensão Kubernetes do VSCode torna a alteração do contexto mais prática
 
+## Resumo do primeiro exemplo
+- Criado uma aplicação em Golang;
+- Dockerfile e geração da imagem;
+- Teste de execução do container;
+- Push da imagem no Dockerhub;
+- Criação do pod.yml;
+- Verifica se os nodes do cluster estão de pé:
+    ```
+    kubectl get nodes
+    ```
+- Aplica o arquivo pod.yml para a criação do Pod:
+    ```
+    kubectl apply -f pod.yml
+    ```
+- Consulta o Pod em execução:
+    ```
+    kubectl get pods
+    ```
+- Exportar a porta do pod em execução:
+    ```
+    kubectl port-forward pod/goserver 3000:3000
+    ```

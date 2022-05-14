@@ -39,7 +39,7 @@ Error: statfs /home/felipe/Documentos/workspace/full-cycle/01-docker/html/xxx: n
 - O docker exec é utilizado para enviar um comando para o container em questão, quando você faz **docker exec -it container /bin/bash** é enviada uma instrução para o container abrir um processo do bash e mantê-lo aberto até que feche. Enquanto que o docker attach anexa o Stdio do container ao seu terminal.
 - Ao sair da função Attach, o container é encerrado.
 
-###Quando:
+### Quando:
 - Precisar persistir os dados do seu container no computador;
 - Tiver que manter o mesmo tipo de File System do Linux (Linux Virtual Machine);
 - Querer ter mais performance;

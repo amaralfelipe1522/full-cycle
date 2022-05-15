@@ -64,3 +64,29 @@ kubectl get deployments
     ```
     kubectl port-forward pod/goserver 3000:3000
     ```
+- Processo de Rollout/Rollback:
+    
+    Lista hitórico de versões:
+    ```
+    kubectl rollout history deployment goserver
+    ```
+    Volta para a versão anterior a atual:
+    ```
+    kubectl rollout undo deployment goserver
+    ```
+    Volta para uma versão específica:
+    ```
+    kubectl rollout undo deployment goserver --to-revision=<NUMERO LISTADO NO HISTORICO DE VERSOES>
+    ```
+- Executar um Service:
+    ```
+    kubectl apply -f service.yml
+    ```
+- Exportar a porta do Service em execução:
+    ```
+    kubectl port-forward service/goserver-service 3000:3000
+    ```
+- Acessando a API do Kubernetes:
+    ```
+    kubectl proxy --port=8080
+    ```

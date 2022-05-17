@@ -46,3 +46,6 @@ Se utiliza da *matchLabels* presente no arquivo do Deployment para realizar essa
 - LoadBalancer - Cria um balanceador de carga externo no provedor de nuvem atual (se suportado) e assinala um endereço IP fixo e externo para o serviço. Superconjunto de NodePort.
 
 - ExternalName - Expõe o serviço usando um nome arbitrário (especificado através de externalName na especificação spec) retornando um registro de CNAME com o nome. Nenhum proxy é utilizado. Este tipo requer v1.7 ou mais recente de kube-dns.
+
+## ConfigMap
+- Mapa de configuração que armazena variáveis de ambiente de forma mais segura em relação a declara-las diretamente no arquivo de Deployment. Em caso de alteração no arquivo ConfigMap, será necessário recriar o Deployment para que as configurações sejam atualizadas.

@@ -90,3 +90,11 @@ kubectl get deployments
     ```
     kubectl proxy --port=8080
     ```
+- Acessando o bash de um Pod assim como se acessa um container Docker:
+    ```
+    kubectl exec -it goserver-7d59bcb6c8-7b449 -- bash 
+    ```
+- Acessando os logs do Pod:
+    ```
+    kubectl logs goserver-7d59bcb6c8-7b449
+    ```

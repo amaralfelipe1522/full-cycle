@@ -49,3 +49,9 @@ Se utiliza da *matchLabels* presente no arquivo do Deployment para realizar essa
 
 ## ConfigMap
 - Mapa de configuração que armazena variáveis de ambiente de forma mais segura em relação a declara-las diretamente no arquivo de Deployment. Em caso de alteração no arquivo ConfigMap, será necessário recriar o Deployment para que as configurações sejam atualizadas.
+
+## Secrets
+- Semelhante ao ConfigMap, porém, usado para dados sensíveis. Estes dados podem ser informados no arquivo YAML como Base64, porém não garante segurança sozinho. Ex.:
+```
+echo "felipe" | base64
+``` 

@@ -54,4 +54,10 @@ Se utiliza da *matchLabels* presente no arquivo do Deployment para realizar essa
 - Semelhante ao ConfigMap, porém, usado para dados sensíveis. Estes dados podem ser informados no arquivo YAML como Base64, porém não garante segurança sozinho. Ex.:
 ```
 echo "felipe" | base64
-``` 
+```
+
+## Health Check
+- Processo para verificar a saúde de nosso sistema, mas para isso, se faz necessário entender os momentos da nossa aplicação.
+
+## Liveness Probe
+- Processo que verifica de tempos em tempos se a aplicação está com problema.

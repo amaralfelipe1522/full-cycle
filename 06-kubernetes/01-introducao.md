@@ -61,3 +61,6 @@ echo "felipe" | base64
 
 ## Liveness Probe
 - Processo que verifica de tempos em tempos se a aplicação está com problema. Pode ser usado de 3 maneiras: Realizando uma requisição HTTP, executando comandos dentro do container ou realizando uma conexão TCP.
+
+## Readiness Probe
+- Processo que verifica quando a aplicação está pronta para receber tráfego. 

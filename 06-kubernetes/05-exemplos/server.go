@@ -16,6 +16,7 @@ func main() {
 	http.HandleFunc("/config-map", HelloConfigMap)
 	http.HandleFunc("/secret", HelloSecret)
 	http.HandleFunc("/healthz", HelloHealthz)
+	http.HandleFunc("/ready", HelloReady)
 	http.ListenAndServe(":3000", nil)
 }
 
@@ -46,12 +47,25 @@ func HelloSecret(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "User: %s - Password: %s", user, password)
 }
 
-// Exemplo de Healthz, onde nossa aplicação estará com problemas mas o Kubernetes não vai saber
+// Exemplo de Healthz, onde nossa aplicação estará com problemas mas o Kubernetes não vai saber. Liveness Probe.
 func HelloHealthz(w http.ResponseWriter, r *http.Request) {
 	// Verificar quanto tempo está em execução
 	duration := time.Since(startedAt)
 
 	if duration.Seconds() > 50 {
+		w.WriteHeader(500)
+		w.Write([]byte(fmt.Sprintf("Duration: %v", duration.Seconds())))
+	} else {
+		w.WriteHeader(200)
+		w.Write([]byte("OK"))
+	}
+}
+
+func HelloReady(w http.ResponseWriter, r *http.Request) {
+	// Simulando se a aplicação já está pronta para receber tráfego de dados. Readness Probe.
+	duration := time.Since(startedAt)
+
+	if duration.Seconds() < 10 {
 		w.WriteHeader(500)
 		w.Write([]byte(fmt.Sprintf("Duration: %v", duration.Seconds())))
 	} else {

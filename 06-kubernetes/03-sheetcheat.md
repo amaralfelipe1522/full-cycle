@@ -98,3 +98,7 @@ kubectl get deployments
     ```
     kubectl logs goserver-7d59bcb6c8-7b449
     ```
+- Executar um Deployment e inspecionar sua inicialização:
+    ```
+    kubectl apply -f deployment.yml && watch -n1 kubectl get pods
+    ```

@@ -16,7 +16,16 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "amaralfelipe1522/example-k8s-01:v5.4"
+          image: "amaralfelipe1522/example-k8s-01:v5.5"
+          # Liveness Probe
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000 # porta do container
+            periodSeconds: 5 # intervalo de tempo em segundos entre cada verificação
+            failureThreshold: 1  # Quantidade de vezes que pode falhar até reiniciar
+            timeoutSeconds: 2 # Contará como um failure quando a requisição demorar mais de 2 segundos
+            successThreshold: 1 # Quantas vezes tem que testar para ter certeza que está tudo bem
           envFrom:
             - configMapRef:
                 name: goserver-env

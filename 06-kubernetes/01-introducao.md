@@ -60,4 +60,4 @@ echo "felipe" | base64
 - Processo para verificar a saúde de nosso sistema, mas para isso, se faz necessário entender os momentos da nossa aplicação.
 
 ## Liveness Probe
-- Processo que verifica de tempos em tempos se a aplicação está com problema.
+- Processo que verifica de tempos em tempos se a aplicação está com problema. Pode ser usado de 3 maneiras: Realizando uma requisição HTTP, executando comandos dentro do container ou realizando uma conexão TCP.

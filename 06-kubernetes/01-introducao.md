@@ -63,4 +63,7 @@ echo "felipe" | base64
 - Processo que verifica de tempos em tempos se a aplicação está com problema. Pode ser usado de 3 maneiras: Realizando uma requisição HTTP, executando comandos dentro do container ou realizando uma conexão TCP.
 
 ## Readiness Probe
-- Processo que verifica quando a aplicação está pronta para receber tráfego. 
+- Processo que verifica quando a aplicação está pronta para receber tráfego. Impede o trafego de dados mesmo após a aplicação estar no ar, em caso do Readiness identificar uma falha posteriormente.
+
+## Startup Probe
+- Semelhante ao Readiness, porém, apenas verifica se a aplicação já está pronta, para então o Readiness iniciar a verificação e liberar o tráfego de dados.

@@ -17,6 +17,13 @@ spec:
       containers:
         - name: goserver
           image: "amaralfelipe1522/example-k8s-01:v5.6"
+          # Startup Probe
+          startupProbe:
+            httpGet:
+              path: /ready
+              port: 3000 # porta do container
+            periodSeconds: 3 # intervalo de tempo em segundos entre cada verificação
+            failureThreshold: 10  # Quantidade de vezes que pode falhar até reiniciar
           # Liveness Probe
           livenessProbe:
             httpGet:

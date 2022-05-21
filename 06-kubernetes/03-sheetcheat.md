@@ -102,3 +102,7 @@ kubectl get deployments
     ```
     kubectl apply -f deployment.yml && watch -n1 kubectl get pods
     ```
+- Verificar quais APIs estão em execução no Kubernetes (exemplo usado com Metrics Server):
+    ```
+    kubectl get apiservices
+    ```    

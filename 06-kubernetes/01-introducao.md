@@ -67,3 +67,6 @@ echo "felipe" | base64
 
 ## Startup Probe
 - Semelhante ao Readiness, porém, apenas verifica se a aplicação já está pronta, para então o Readiness iniciar a verificação e liberar o tráfego de dados.
+
+## Metrics Server
+- Coleta métricas em tempo real do consumo dos recursos e geralmente é utilizado junto com Prometheus e Grafana para gerar graficos desses dados coletados. Na Cloud esse serviço já é instanciado automaticamente, porém, com um cluster local se faz necessário a instalação manualmente.

@@ -30,3 +30,22 @@ Apontando o Kubectl ao cluster criado pelo Kind (~/.kube/config):
 ```
 kubectl cluster-info --context kind-kind
 ```
+
+## Metric Server
+> [Github da Aplicação](https://github.com/kubernetes-sigs/metrics-server)
+
+Baixe manualmente:
+```
+wget kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+Adicionar o seguinte argumento no arquivo baixado para que seja possível realizar a comunicação sem TLS com o container:
+***- --kubelet-insecure-tls***
+
+Aplica o serviço:
+```
+kubectl apply -f metrics-server.yaml
+```
+Verifica se a instalação ocorreu com sucesso:
+```
+kubectl get apiservices
+```    

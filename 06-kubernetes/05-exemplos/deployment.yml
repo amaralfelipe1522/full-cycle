@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "amaralfelipe1522/example-k8s-01:v5.6"
+          image: "amaralfelipe1522/example-k8s-01:v6"
           resources:
             requests: # Se refere ao mínimo necessário
               cpu: "0.3" # vCPU -> milicores (100m) ou em % ("0.3")

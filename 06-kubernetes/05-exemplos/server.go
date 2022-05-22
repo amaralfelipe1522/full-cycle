@@ -52,7 +52,7 @@ func HelloHealthz(w http.ResponseWriter, r *http.Request) {
 	// Verificar quanto tempo está em execução
 	duration := time.Since(startedAt)
 
-	if duration.Seconds() > 50 {
+	if duration.Seconds() > 50000 {
 		w.WriteHeader(500)
 		w.Write([]byte(fmt.Sprintf("Duration: %v", duration.Seconds())))
 	} else {

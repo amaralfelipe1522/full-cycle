@@ -70,3 +70,9 @@ echo "felipe" | base64
 
 ## Metrics Server
 - Coleta métricas em tempo real do consumo dos recursos e geralmente é utilizado junto com Prometheus e Grafana para gerar graficos desses dados coletados. Na Cloud esse serviço já é instanciado automaticamente, porém, com um cluster local se faz necessário a instalação manualmente.
+
+## Resources
+- Recomendado declarar no Deployment o mínimo e máximo de recursos computacionais que os containers poderão utilizar, evitando assim que seja utilizado 100% dos nodes e cluster.
+
+## HPA - Horizontal Pod Autoscaling
+- Responsável por buscar as métricas de recursos utilizados e se necessário, irá provisionar mais réplicas para a aplicação.

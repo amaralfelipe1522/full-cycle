@@ -105,4 +105,8 @@ kubectl get deployments
 - Verificar quais APIs estão em execução no Kubernetes (exemplo usado com Metrics Server):
     ```
     kubectl get apiservices
-    ```    
+    ```
+- Visualizer recursos utilizados de CPU e Memória do Pod:
+    ```
+    kubectl top pods <NOME DO POD>
+    ```

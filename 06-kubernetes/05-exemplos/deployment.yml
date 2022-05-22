@@ -17,6 +17,13 @@ spec:
       containers:
         - name: goserver
           image: "amaralfelipe1522/example-k8s-01:v5.6"
+          resources:
+            requests: # Se refere ao mínimo necessário
+              cpu: "0.3" # vCPU -> milicores (100m) ou em % ("0.3")
+              memory: 20Mi
+            limits: # Se refere ao máximo
+              cpu: "0.3"
+              memory: 25Mi
           # Startup Probe
           startupProbe:
             httpGet:

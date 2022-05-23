@@ -76,3 +76,6 @@ echo "felipe" | base64
 
 ## HPA - Horizontal Pod Autoscaling
 - Responsável por buscar as métricas de recursos utilizados e se necessário, irá provisionar mais réplicas para a aplicação.
+
+## Volumes
+- Estático ou Dinâmico. Geralmente do tipo ReadWriteOnce (para todos os pods dentro de um Node). Deve-se definir no Deployment o Binding desse volume com o StorageClass.

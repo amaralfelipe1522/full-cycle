@@ -79,3 +79,8 @@ echo "felipe" | base64
 
 ## Volumes
 - Estático ou Dinâmico. Geralmente do tipo ReadWriteOnce (para todos os pods dentro de um Node). Deve-se definir no Deployment o Binding desse volume com o StorageClass.
+
+## Stateless x Stateful
+-   Ao contrário do Stateless, é necessário subir aplicações Stateful de forma ordenada, usando o **Stateful Sets** ao invés de Deployments:
+![Stateless x Stateful](../assets/stateless-stateful.png)
+

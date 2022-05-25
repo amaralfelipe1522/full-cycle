@@ -122,3 +122,13 @@ kubectl get deployments
     ```
     kubectl get storageclass
     ```
+- Escalando um Deployment ou StatefulSet:
+    ```
+    kubectl scale statefulset mysql --replicas=5
+    ```
+- Visualizando cada Pod em um Headless Service (de outro container no mesmo cluster):
+    ```
+    kubectl exec -it goserver-XXXXXXXX-XXX -- bash
+    ping mysql-headless
+    ping mysql-0.mysql-headless
+    ```

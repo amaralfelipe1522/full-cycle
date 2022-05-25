@@ -81,6 +81,8 @@ echo "felipe" | base64
 - Estático ou Dinâmico. Geralmente do tipo ReadWriteOnce (para todos os pods dentro de um Node). Deve-se definir no Deployment o Binding desse volume com o StorageClass.
 
 ## Stateless x Stateful
--   Ao contrário do Stateless, é necessário subir aplicações Stateful de forma ordenada, usando o **Stateful Sets** ao invés de Deployments:
+- Ao contrário do Stateless, é necessário subir aplicações Stateful de forma ordenada, usando o **Stateful Sets** ao invés de Deployments:
 ![Stateless x Stateful](../assets/stateless-stateful.png)
 
+## Headless Service
+- Usado um Headless Service quando por exemplo, temos 1 pod principal responsável pela escrita no banco de dados e N pods de balanceamento, porém, que não são responsáveis por escrever no banco de dados. Então um Headless Service aponta para o pod correspondente a suas responsabilidades a cada requisição, como um DNS.

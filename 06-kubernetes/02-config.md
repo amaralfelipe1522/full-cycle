@@ -48,4 +48,15 @@ kubectl apply -f metrics-server.yaml
 Verifica se a instalação ocorreu com sucesso:
 ```
 kubectl get apiservices
-```    
+```
+
+## Minikube
+- Download e instalação:
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
+- Criar cluster com multiplos nodes:
+```
+minikube start --nodes 2 -p multinode-demo
+```

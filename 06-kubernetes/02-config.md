@@ -60,3 +60,9 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 minikube start --nodes 2 -p multinode-demo
 ```
+
+## Ajuste no Docker Service
+```
+sudo sysctl fs.inotify.max_user_instances=512
+sudo systemctl restart docker 
+```

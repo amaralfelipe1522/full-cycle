@@ -86,3 +86,6 @@ echo "felipe" | base64
 
 ## Headless Service
 - Usado um Headless Service quando por exemplo, temos 1 pod principal responsável pela escrita no banco de dados e N pods de balanceamento, porém, que não são responsáveis por escrever no banco de dados. Então um Headless Service aponta para o pod correspondente a suas responsabilidades a cada requisição, como um DNS.
+
+## Ingress
+- Ponto único de entrada de sua aplicação (acesso externo) e faz o roteamento para os serviços, assim como uma API Gateway e Proxy Reverse.

@@ -89,3 +89,4 @@ echo "felipe" | base64
 
 ## Ingress
 - Ponto único de entrada de sua aplicação (acesso externo) e faz o roteamento para os serviços, assim como uma API Gateway e Proxy Reverse.
+- Ingress do NGINX instalado via Helm, aplicação instânciada na nuvem, ingress.yml aplicado e DNS aplicado na Cloudflare. Nesse caso não tem mais a necessidade do service ser do tipo LoadBalancer.

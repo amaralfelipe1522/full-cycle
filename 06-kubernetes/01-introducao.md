@@ -90,3 +90,7 @@ echo "felipe" | base64
 ## Ingress
 - Ponto único de entrada de sua aplicação (acesso externo) e faz o roteamento para os serviços, assim como uma API Gateway e Proxy Reverse.
 - Ingress do NGINX instalado via Helm, aplicação instânciada na nuvem, ingress.yml aplicado e DNS aplicado na Cloudflare. Nesse caso não tem mais a necessidade do service ser do tipo LoadBalancer.
+
+## Namespaces
+- Separação virtual no cluster para cada instalação, sendo assim possível definir recursos computacionais e segurança de acessos para cada um.
+- É possível definir o namespace na linha de comando *kubectl apply* ou nas especificações do arquivo YAML.

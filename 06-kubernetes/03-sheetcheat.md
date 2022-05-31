@@ -132,3 +132,35 @@ kubectl get deployments
     ping mysql-headless
     ping mysql-0.mysql-headless
     ```
+- Visualizar os namespaces:
+    ```
+    kubectl get namespace
+    ```
+- Visualizar os pods por namespaces:
+    ```
+    kubectl get pods -n=kube-system
+    ```
+- Criar um namespace:
+    ```
+    kubectl create ns ns-develop
+    ```
+- Aplicar um arquivo YAML ao namespace específico:
+    ```
+    kubectl apply -f <NOME DO ARQUIVO> -n=<NOME DO NAMESPACE>
+    ```
+- Filtrar pods por Labels:
+    ```
+    kubectl get pods -l <NOME DA LABEL>
+    ```
+- Exibir configurações do cluster:
+    ```
+    kubectl config view
+    ```
+- Exibir contexto atual do cluster:
+    ```
+    kubectl config current-context
+    ```
+- Criar um novo contexto no cluster onde:
+    ```
+    kubectl config set-context dev --namespace=dev --cluster=kind-second-cluster --user=kind-second-cluster
+    ```

@@ -1,0 +1,36 @@
+# Service Account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: server
+
+---
+
+# Role
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: server-read
+rules:
+- apiGroups: [""] # Conforme consultado no kubectl api-resources, estes não possui groups
+  resources: ["pods","services"]
+  verbs: ["get","watch","list"]
+- apiGroups: ["apps"] # Conforme consultado no kubectl api-resources, deploymentes está no group APPS
+  resources: ["deployments"]
+  verbs: ["get","watch","list"]
+
+---
+
+# Realiza o binding entre o Service Account com a Role
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: server-read-bind
+subjects:
+- kind: ServiceAccount
+  name: server
+  namespace: develop
+roleRef:
+  kind: Role
+  name: server-read
+  apiGroup: rbac.authorization.k8s.io # Conforme consultado no kubectl api-resources

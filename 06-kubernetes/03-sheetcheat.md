@@ -164,3 +164,11 @@ kubectl get deployments
     ```
     kubectl config set-context dev --namespace=dev --cluster=kind-second-cluster --user=kind-second-cluster
     ```
+- Lista os Service Accounts existentes:
+    ```
+    kubectl get serviceaccounts
+    ```
+- Lista os recursos e suas APIs Groups:
+    ```
+    kubectl api-resources
+    ```

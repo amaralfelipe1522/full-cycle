@@ -94,3 +94,12 @@ echo "felipe" | base64
 ## Namespaces
 - Separação virtual no cluster para cada instalação, sendo assim possível definir recursos computacionais e segurança de acessos para cada um.
 - É possível definir o namespace na linha de comando *kubectl apply* ou nas especificações do arquivo YAML.
+
+## Service Accounts
+- Garante as permissões (Roles) necessárias do container no Kubernetes, impedindo assim de um invasor conseguir acesso ao Kubernetes, e por exemplo, excluir os Pods.
+- É criado automaticamente um volume no container com os arquivos de Service Account.
+- Exemplo em security.yml:
+    - Criar o Service Account;
+    - Criar a Role baseada em apiGroups;
+    - Realizar o binding da Role com a Service Account;
+    - Indicar no arquivo Deployment qual Service Account utilizar.

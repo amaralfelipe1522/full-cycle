@@ -103,3 +103,6 @@ echo "felipe" | base64
     - Criar a Role baseada em apiGroups;
     - Realizar o binding da Role com a Service Account;
     - Indicar no arquivo Deployment qual Service Account utilizar.
+
+## Cluster Role
+- Semelhante as Roles, porém, se trata de regras de acesso para todos os Namespaces de um Cluster.
